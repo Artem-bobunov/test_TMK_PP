@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block container %}
+<style>
+    th, td {
+        text-align: center;
+    }
+    tr.pointer {
+      cursor: pointer;
+      }
+
+</style>
+
+<table class="table table-hover table-bordered">
+    <thead>
+    <tr>
+        <th colspan="2">Справочник товаров</th>
+        <th>Справочник контрагентов</th>
+        <th colspan="3">Шапка документа</th>
+        <th colspan="2">Остатки товаров на складе</th>
+        <th colspan="4">Спецификация документов</th>
+    </tr>
+    <tr>
+        <th>Наименование товара</th>
+        <th>Цена</th>
+        <th>Наименование контракта</th>
+        <th>Номер документа</th>
+        <th>Дата</th>
+        <th>Сумма документа</th>
+        <th>Количество фактическое</th>
+        <th>Количество в резерве</th>
+        <th>Количество</th>
+        <th>Количество в резерве</th>
+        <th>Цена</th>
+        <th>Скидка</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for i in obj %}
+    <tr class="pointer" onclick="document.location = '{% url 'update' i.pk %}';">
+        <td>{{i.link_dp.name_product}}</td>
+        <td>{{i.link_dp.price}} руб.</td>
+        <td>{{i.link_dh.link_dc.contract}}</td>
+        <td>{{i.link_dh.number_document}}</td>
+        <td>{{i.link_dh.date}}</td>
+        <td>{{i.link_dh.summ_document}}</td>
+        <td>{{i.link_ps.count_fact}}</td>
+        <td>{{i.link_ps.count_reserv}}</td>
+        <td>{{i.counts}}</td>
+        <td>{{i.counts_reserv}}</td>
+        <td>{{i.price}} руб.</td>
+        <td>{{i.discount}} %</td>
+    </tr>
+    {% endfor %}
+
+
+    </tbody>
+</table>
+
+
+{% endblock%}

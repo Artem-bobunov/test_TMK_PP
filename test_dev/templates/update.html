@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block container %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">Справочник товаров</h5>
+        </div>
+        <div class="card-body">
+
+            <ul class="list-group">
+                <li class="list-group-item"><h6>{{ form2.name_product.label_tag }}</h6>{{form2.name_product}}</li>
+                <li class="list-group-item"><h6>{{ form2.price.label_tag }} </h6>{{form2.price}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card mt-2">
+        <div class="card-header">
+            <h5 class="card-title">Справочник контрагентов</h5>
+        </div>
+        <div class="card-body">
+
+            <ul class="list-group">
+                <li class="list-group-item"><h6> {{ form4.contract.label_tag }}</h6>{{form4.contract}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card mt-2">
+        <div class="card-header">
+            <h5 class="card-title">Шапка документа</h5>
+        </div>
+        <div class="card-body">
+
+            <ul class="list-group">
+                <li class="list-group-item"><h6>{{ form1.number_document.label_tag }}</h6>{{form1.number_document}}</li>
+<!--                <li class="list-group-item"><h6> </h6>{{form1.date}}</li>-->
+                <li class="list-group-item"><h6> {{ form1.summ_document.label_tag }}</h6>{{form1.summ_document}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card mt-2">
+        <div class="card-header">
+            <h5 class="card-title">Остатки товаров на складе</h5>
+        </div>
+        <div class="card-body">
+
+            <ul class="list-group">
+                <li class="list-group-item"><h6>{{ form3.count_fact.label_tag }}</h6>{{form3.count_fact}}</li>
+                <li class="list-group-item"><h6>{{ form3.count_reserv.label_tag }}</h6>{{form3.count_reserv}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card mt-2">
+        <div class="card-header">
+            <h5 class="card-title">Остатки товаров на складе</h5>
+        </div>
+        <div class="card-body">
+
+            <ul class="list-group">
+                <li class="list-group-item"><h6> {{ form.price.label_tag }}</h6>{{form.counts}}</li>
+                <li class="list-group-item"><h6> {{ form.counts.label_tag }}</h6>{{form.counts_reserv}}</li>
+                <li class="list-group-item"><h6> {{ form.counts_reserv.label_tag }}</h6>{{form.price}}</li>
+                <li class="list-group-item"><h6> {{ form.discount.label_tag }}</h6>{{form.discount}}</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <center>
+        <button type="submit" class="btn btn-success mt-2">Сохранить</button>
+    </center>
+</form>
+
+{% endblock%}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block meta_tags %}{% endblock %}
+    <title>{% block title %}TMK++{% endblock %}</title>
+
+    {% block css %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    {% endblock %}
+
+    {% block custom_css %}
+    {% endblock %}
+</head>
+<body>
+{% block content %}
+
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+
+        <a class="navbar-brand logo " href="#">
+            <a href="{% url 'list' %}"><img
+                    src="https://hsto.org/getpro/moikrug/uploads/company/100/007/677/5/logo/medium_40e6f59abe93147058a88f58ba1e9a5e.png"
+                    style="width: 100px; height: auto;"></a>
+        </a>
+        <div class="col-sm">
+            <p style="font-size: 14px;font-weight: bold; padding-left: 30px; margin:0; color:#FFF;">Тестовое
+                задание</p>
+        </div>
+
+    </div>
+
+</nav>
+<div class="container mt-4">
+    {% block container %}
+
+    {% endblock %}
+</div>
+
+
+{% block js %}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block custom_js %}
+{% endblock %}
+{% endblock %}
+
+</body>
+</html>
