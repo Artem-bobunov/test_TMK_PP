@@ -59,7 +59,7 @@ class FormDocumentSpecification(forms.ModelForm):
         widgets = {
             'counts': forms.NumberInput(attrs={'class': 'form-control'}),
             'counts_reserv': forms.NumberInput(attrs={'class': 'form-control'}),
-            'price': forms.NumberInput(attrs={'class': 'form-control'}),
+            'prices': forms.NumberInput(attrs={'class': 'form-control'}),
             'discount': forms.NumberInput(attrs={'class': 'form-control'}),
         }
 
