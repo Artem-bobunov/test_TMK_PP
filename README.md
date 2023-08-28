@@ -4,8 +4,7 @@
 ### Создание базы данных
 В данном проекте я использовал Django ORM для создания базы данных. Структуру базы описана в моделях. Для связей между моделями я использовал OneToOneField.
 
-Пример кода:
-  ```pyton
+  ```python
   from django.db import models
 
 class directory_product(models.Model):
@@ -48,5 +47,14 @@ class document_specification(models.Model):
     discount = models.IntegerField('Скидка',null=True,blank=True)
     # Добавил самостоятельно
     link_ps = models.OneToOneField(product_stock, on_delete=models.SET_NULL,null=True,blank=True)
+```
 
-  ```
+### Создание бекенд части
+Эта функция отвечает за вывод данных на страницу и принимает обязательный аргумент request
+```python
+def list(request):
+    obj = document_specification.objects.order_by('id')
+    return render(request,'list.html',{'obj':obj})
+```
+
+
