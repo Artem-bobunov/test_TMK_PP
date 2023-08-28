@@ -11,7 +11,7 @@ class DocumentHeader(admin.ModelAdmin):
     list_display = ['number_document','date','summ_document']
 
 class DocumentSpecification(admin.ModelAdmin):
-    list_display = ['counts','counts_reserv','price','discount']
+    list_display = ['counts','counts_reserv','prices','discount']
 
 class ProductStock(admin.ModelAdmin):
     list_display = ['count_fact','count_reserv']
