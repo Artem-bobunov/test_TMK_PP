@@ -13,11 +13,11 @@ class directory_counterparties(models.Model):
 class document_header(models.Model):
     """Шапка документа"""
 
-    choices_type = (
-        ('Приход','Приход'),
-        ('Резерв','Резерв'),
-        ('Расход','Расход'),
-    )
+    # choices_type = (
+    #     ('Приход','Приход'),
+    #     ('Резерв','Резерв'),
+    #     ('Расход','Расход'),
+    # )
 
     number_document = models.IntegerField('Номер документа',null=True,blank=True)
     # ссылка на справочник контрагентов
@@ -43,7 +43,7 @@ class document_specification(models.Model):
     link_dp = models.OneToOneField(directory_product, on_delete=models.SET_NULL,null=True,blank=True)
     counts = models.IntegerField('Количество',null=True,blank=True)
     counts_reserv = models.IntegerField('Количество в резерве',null=True,blank=True)
-    price = models.IntegerField('Цена',null=True,blank=True)
+    prices = models.IntegerField('Цена',null=True,blank=True)
     discount = models.IntegerField('Скидка',null=True,blank=True)
     # Добавил самостоятельно
     link_ps = models.OneToOneField(product_stock, on_delete=models.SET_NULL,null=True,blank=True)
