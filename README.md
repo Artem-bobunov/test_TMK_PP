@@ -315,6 +315,7 @@ class document_header(models.Model):
 - Страница обновления данных
 
 
+
   ![image](https://github.com/Artem-bobunov/test_TMK_PP/assets/38436717/ee0ab30d-556a-4040-a4f8-95d1c342eca6)
 
   
