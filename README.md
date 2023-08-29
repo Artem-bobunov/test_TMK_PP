@@ -134,5 +134,9 @@ def list(request):
 
 
 
+![image](https://github.com/Artem-bobunov/test_TMK_PP/assets/38436717/c5acb8bb-3a33-4193-acf9-4154cef1eda2)
+
+
+
 
 
