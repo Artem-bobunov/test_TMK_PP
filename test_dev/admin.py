@@ -8,7 +8,7 @@ class DirectoryCounterparties(admin.ModelAdmin):
     list_display = ['contract']
 
 class DocumentHeader(admin.ModelAdmin):
-    list_display = ['number_document','date','summ_document']
+    list_display = ['number_document','date','summ_document','state_document','type_document']
 
 class DocumentSpecification(admin.ModelAdmin):
     list_display = ['counts','counts_reserv','prices','discount']
