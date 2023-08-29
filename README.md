@@ -123,6 +123,9 @@ return render(request,'update.html',{'form':form,'form1':form1,'form2':form2,'fo
 
 Снимок экрана 2023-08-29 084508.png
 
+![image](https://github.com/Artem-bobunov/test_TMK_PP/assets/38436717/dd09541b-6249-447c-9bca-3d104385c318)
+
+
 
 
 [![Тут текст](https://img.youtube.com/vi/RHPYGwVQB2o/0.jpg)](https://youtu.be/RHPYGwVQB2o)
@@ -130,6 +133,9 @@ return render(request,'update.html',{'form':form,'form1':form1,'form2':form2,'fo
 
 - На главной странице выбираем интересующую запись и нажимаем на нее , затем попадем на страницу редактирования
 Снимок экрана 2023-08-29 084421.png
+
+
+![image](https://github.com/Artem-bobunov/test_TMK_PP/assets/38436717/233e76d8-c9f7-40c7-9160-11d9d9b1bf93)
 
 
 # ТЕСТОВОЕ ЗАДАНИЕ №2
