@@ -1,3 +1,18 @@
+Для запуска проекта можно его склонировать установить следующие зависимости
+```
+pip install Djnago==3.2.11
+pip install psycopg2
+```
+Затем зайти в первую папку test_set и выполнить следующую команду, которая сохрнаит све изменнения в отдельной папке migrate
+```
+python manage.py makemigrations
+```
+Далее необходимо выполнить миграции в базу данных. Эта команда применит все изменения которые были сохранены  миграциях
+```
+python manage.py migrate
+```
+
+
 # ТЕСТОВОЕ ЗАДАНИЕ №1 
 ## Создание базы данных и приложения
 
@@ -295,8 +310,10 @@ class document_header(models.Model):
 - Главная страница после обновления
   ![image](https://github.com/Artem-bobunov/test_TMK_PP/assets/38436717/c5928074-6575-4922-9795-68ed251a9674)
 
-  - Страница обновления данных
-    ![image](https://github.com/Artem-bobunov/test_TMK_PP/assets/38436717/ee0ab30d-556a-4040-a4f8-95d1c342eca6)
+- Страница обновления данных
+  ![image](https://github.com/Artem-bobunov/test_TMK_PP/assets/38436717/ee0ab30d-556a-4040-a4f8-95d1c342eca6)
+
+  
     
 
 
