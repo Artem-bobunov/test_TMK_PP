@@ -50,8 +50,8 @@ class document_specification(models.Model):
 ```
 
 ### Создание бекенд части
-Эта функция отвечает за вывод данных на страницу и принимает обязательный аргумент request
-- Функция просмотра всей инфорации:
+На данном этапе реализовал две функции просмотра и редактирования инфорамции. Внесение записей осущевслялось как с помощью SQL так и с использованием Django Admin Panel
+- Функция просмотра всей инфорации принимает обязательный аргумент request:
 ```python
 def list(request):
     obj = document_specification.objects.order_by('id')
@@ -115,5 +115,16 @@ def list(request):
 
     return render(request,'update.html',{'form':form,'form1':form1,'form2':form2,'form3':form3,'form4':form4})
 ```
+
+- Главная страница приложения
+![image](https://github.com/Artem-bobunov/test_TMK_PP/assets/38436717/d7d709d5-797e-4668-84e5-08c424cdde0c)
+На этой странице пользователь может просматриват всю информацию связанных между собой таблиц.
+
+На главной странице выбираем интересующую запись и нажимаем на нее , затем попадем на страницу редактирования
+![image](https://github.com/Artem-bobunov/test_TMK_PP/assets/38436717/418e09a4-ff46-427e-bd6d-7a9ba43bbe70)
+
+
+
+
 
 
