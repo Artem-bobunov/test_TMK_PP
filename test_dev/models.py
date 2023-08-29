@@ -13,18 +13,20 @@ class directory_counterparties(models.Model):
 class document_header(models.Model):
     """Шапка документа"""
 
-    # choices_type = (
-    #     ('Приход','Приход'),
-    #     ('Резерв','Резерв'),
-    #     ('Расход','Расход'),
-    # )
+    choices_type = (
+        ('Приход','Приход'),
+        ('Резерв','Резерв'),
+        ('Расход','Расход'),
+    )
 
     number_document = models.IntegerField('Номер документа',null=True,blank=True)
     # ссылка на справочник контрагентов
     link_dc = models.OneToOneField(directory_counterparties, on_delete=models.SET_NULL,null=True,blank=True)
     date = models.DateField('Дата',auto_now = True)
     summ_document = models.IntegerField('Сумма документа',null=True)
-
+    #Второе задание
+    state_document = models.CharField('Состояние документа',max_length=255,null=True,blank=True)
+    type_document = models.CharField('Тип документа', choices=choices_type,max_length=255,null=True,blank=True)
 
 class product_stock(models.Model):
     """Остатки товаров на складе"""
