@@ -121,7 +121,7 @@ def list(request):
 - Главная страница приложения
 На этой странице пользователь может просматриват всю информацию связанных между собой таблиц.
 
-<img src="[assets/images/bs-images/img-2x1.png](https://github.com/Artem-bobunov/test_TMK_PP/assets/38436717/d7d709d5-797e-4668-84e5-08c424cdde0c)" class="img-fluid" alt="img-fluid">
+<img src="Снимок экрана 2023-08-29 084508.png" class="img-fluid" alt="img-fluid">
 ![Главная страница](https://github.com/Artem-bobunov/test_TMK_PP/assets/38436717/d7d709d5-797e-4668-84e5-08c424cdde0c)
 
 
