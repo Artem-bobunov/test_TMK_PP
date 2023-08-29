@@ -59,62 +59,62 @@ def list(request):
     return render(request,'list.html',{'obj':obj})
 ```
 - Функция обноления записи. В функцию я передаю аргумент id, который дальше исполуя чтобы найти в базе запись из таблицы document_specification, а далее по ключам прыгаю по другим таблицам чтобы найти данные и передать их в форму. Если request.method содержит POST, создаю объекты форм и в instance передаю значения которые ддолжна содержать эта форма. Проверяю не содержит ли формы ошибок при сохраненнии. Если формы валидны, сохраняю связынне формы, затем айдишникам для связки с другими таблицами присваиваю объект форм, это делается для того чтобы все связи между таблицами остались при изменении. далее сохраняю объекты форм и если все успешно сохранилось, то перехожу на главную страницу , иначе отработает блок Except и выведет ошибку.
-  ```python
-  def update(request,id):
-    obj = document_specification.objects.get(id=id)
-    link_dh_instance = obj.link_dh
-    link_dp_instance = obj.link_dp
-    link_ps_instance = obj.link_ps
-    link_dh_link_dc_instance = obj.link_dh.link_dc
+```python
+def update(request,id):
+obj = document_specification.objects.get(id=id)
+link_dh_instance = obj.link_dh
+link_dp_instance = obj.link_dp
+link_ps_instance = obj.link_ps
+link_dh_link_dc_instance = obj.link_dh.link_dc
 
-    if request.method == 'POST':
-        form = FormDocumentSpecification(request.POST, instance=obj)
-        form1 = FormDocumentHeader(request.POST, instance=link_dh_instance)
-        form2 = FormDirectoryProduct(request.POST, instance=link_dp_instance)
-        form3 = FormProductStock(request.POST, instance=link_ps_instance)
-        form4 = FormDirectoryCounterparties(request.POST,instance=link_dh_link_dc_instance)
-        if form.errors:
-            print(f'Форма 0 {form.errors}')
-        if form1.errors:
-            print(f'Форма 1 {form1.errors}')
-        if form2.errors:
-            print(f'Форма 2 {form2.errors}')
-        if form3.errors:
-            print(f'Форма 3 {form3.errors}')
-        if form4.errors:
-            print(f'Форма 4 {form4.errors}')
-        if form.is_valid() and form1.is_valid() and form2.is_valid() and form3.is_valid() and form4.is_valid():
-            print('ФОРМА ВАЛИДНА')
-            try:
-                # form.save()
-                # Сохранение связанных форм
-                link_dh_instance = form1.save()
-                link_dp_instance = form2.save()
-                link_ps_instance = form3.save()
-                link_dh_link_dc_instance = form4.save()
+if request.method == 'POST':
+    form = FormDocumentSpecification(request.POST, instance=obj)
+    form1 = FormDocumentHeader(request.POST, instance=link_dh_instance)
+    form2 = FormDirectoryProduct(request.POST, instance=link_dp_instance)
+    form3 = FormProductStock(request.POST, instance=link_ps_instance)
+    form4 = FormDirectoryCounterparties(request.POST,instance=link_dh_link_dc_instance)
+    if form.errors:
+        print(f'Форма 0 {form.errors}')
+    if form1.errors:
+        print(f'Форма 1 {form1.errors}')
+    if form2.errors:
+        print(f'Форма 2 {form2.errors}')
+    if form3.errors:
+        print(f'Форма 3 {form3.errors}')
+    if form4.errors:
+        print(f'Форма 4 {form4.errors}')
+    if form.is_valid() and form1.is_valid() and form2.is_valid() and form3.is_valid() and form4.is_valid():
+        print('ФОРМА ВАЛИДНА')
+        try:
+            # form.save()
+            # Сохранение связанных форм
+            link_dh_instance = form1.save()
+            link_dp_instance = form2.save()
+            link_ps_instance = form3.save()
+            link_dh_link_dc_instance = form4.save()
 
-                # Связывание связанных объектов с объектом document_specification
-                obj.link_dh = link_dh_instance
-                obj.link_dp = link_dp_instance
-                obj.link_ps = link_ps_instance
-                link_dh_instance.link_dc = link_dh_link_dc_instance
-                link_dh_instance.save()
-                link_dp_instance.save()
-                link_ps_instance.save()
+            # Связывание связанных объектов с объектом document_specification
+            obj.link_dh = link_dh_instance
+            obj.link_dp = link_dp_instance
+            obj.link_ps = link_ps_instance
+            link_dh_instance.link_dc = link_dh_link_dc_instance
+            link_dh_instance.save()
+            link_dp_instance.save()
+            link_ps_instance.save()
 
-                obj.save()
+            obj.save()
 
-                return redirect('/')
-            except Exception as e:
-                print(f'ОШИБКА: {e}')
-    else:
-        form = FormDocumentSpecification(instance=obj)
-        form1 = FormDocumentHeader(instance=link_dh_instance)
-        form2 = FormDirectoryProduct(instance=link_dp_instance)
-        form3 = FormProductStock(instance=link_ps_instance)
-        form4 = FormDirectoryCounterparties(instance=link_dh_link_dc_instance)
+            return redirect('/')
+        except Exception as e:
+            print(f'ОШИБКА: {e}')
+else:
+    form = FormDocumentSpecification(instance=obj)
+    form1 = FormDocumentHeader(instance=link_dh_instance)
+    form2 = FormDirectoryProduct(instance=link_dp_instance)
+    form3 = FormProductStock(instance=link_ps_instance)
+    form4 = FormDirectoryCounterparties(instance=link_dh_link_dc_instance)
 
-    return render(request,'update.html',{'form':form,'form1':form1,'form2':form2,'form3':form3,'form4':form4})
+return render(request,'update.html',{'form':form,'form1':form1,'form2':form2,'form3':form3,'form4':form4})
 ```
 
 
