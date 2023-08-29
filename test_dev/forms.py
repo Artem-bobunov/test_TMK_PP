@@ -34,6 +34,8 @@ class FormDocumentHeader(forms.ModelForm):
             'number_document': forms.NumberInput(attrs={'class': 'form-control'}),
             'summ_document': forms.NumberInput(attrs={'class': 'form-control'}),
             'date': forms.TextInput(attrs={'class': 'form-control','type': 'date','format':'%d.%m.%Y'}),
+            'state_document':TextInput(attrs={'class':'form-control'}),
+            'type_document':Select(attrs={'class':'form-control'})
         }
 
 
