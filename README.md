@@ -269,7 +269,28 @@ def update(request,id):
         form4 = FormDirectoryCounterparties(instance=link_dh_link_dc_instance)
 
     return render(request,'update.html',{'form':form,'form1':form1,'form2':form2,'form3':form3,'form4':form4})
+```
 
+- Измененная модель, доавблены поля : состояние документа, тип документа.
+```python
+
+class document_header(models.Model):
+    """Шапка документа"""
+
+    choices_type = (
+        ('Приход','Приход'),
+        ('Резерв','Резерв'),
+        ('Расход','Расход'),
+    )
+
+    number_document = models.IntegerField('Номер документа',null=True,blank=True)
+    # ссылка на справочник контрагентов
+    link_dc = models.OneToOneField(directory_counterparties, on_delete=models.SET_NULL,null=True,blank=True)
+    date = models.DateField('Дата',auto_now = True)
+    summ_document = models.IntegerField('Сумма документа',null=True)
+    #Второе задание
+    state_document = models.CharField('Состояние документа',max_length=255,null=True,blank=True)
+    type_document = models.CharField('Тип документа', choices=choices_type,max_length=255,null=True,blank=True)
 ```
 
 
