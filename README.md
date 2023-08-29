@@ -122,14 +122,14 @@ def list(request):
 На этой странице пользователь может просматриват всю информацию связанных между собой таблиц.
 
 
-[![Главная страница](https://github.com/Artem-bobunov/test_TMK_PP/assets/38436717/d7d709d5-797e-4668-84e5-08c424cdde0c)]
+![Главная страница](https://github.com/Artem-bobunov/test_TMK_PP/assets/38436717/d7d709d5-797e-4668-84e5-08c424cdde0c)
 
 
 
 - На главной странице выбираем интересующую запись и нажимаем на нее , затем попадем на страницу редактирования
 
 
-[![Страница обновления](https://github.com/Artem-bobunov/test_TMK_PP/assets/38436717/418e09a4-ff46-427e-bd6d-7a9ba43bbe70)]
+![Страница обновления](https://github.com/Artem-bobunov/test_TMK_PP/assets/38436717/418e09a4-ff46-427e-bd6d-7a9ba43bbe70)
 
 
 
