@@ -35,6 +35,8 @@
                 <li class="list-group-item"><h6>{{ form1.number_document.label_tag }}</h6>{{form1.number_document}}</li>
 <!--                <li class="list-group-item"><h6> </h6>{{form1.date}}</li>-->
                 <li class="list-group-item"><h6> {{ form1.summ_document.label_tag }}</h6>{{form1.summ_document}}</li>
+                <li class="list-group-item"><h6> {{ form1.state_document.label_tag }}</h6>{{form1.state_document}}</li>
+                <li class="list-group-item"><h6> {{ form1.type_document.label_tag }}</h6>{{form1.type_document}}</li>
             </ul>
         </div>
     </div>
@@ -52,15 +54,15 @@
     </div>
     <div class="card mt-2">
         <div class="card-header">
-            <h5 class="card-title">Остатки товаров на складе</h5>
+            <h5 class="card-title">Спецификация документов</h5>
         </div>
         <div class="card-body">
 
             <ul class="list-group">
-                <li class="list-group-item"><h6> {{ form.price.label_tag }}</h6>{{form.counts}}</li>
-                <li class="list-group-item"><h6> {{ form.counts.label_tag }}</h6>{{form.counts_reserv}}</li>
-                <li class="list-group-item"><h6> {{ form.counts_reserv.label_tag }}</h6>{{form.price}}</li>
-                <li class="list-group-item"><h6> {{ form.discount.label_tag }}</h6>{{form.discount}}</li>
+                <li class="list-group-item"><h6>{{ form.prices.label_tag }}</h6>{{form.prices}}</li>
+                <li class="list-group-item"><h6>{{ form.counts_reserv.label_tag }}</h6>{{form.counts_reserv}}</li>
+                <li class="list-group-item"><h6>{{ form.counts.label_tag }}</h6>{{form.counts}}</li>
+                <li class="list-group-item"><h6>{{ form.discount.label_tag }}</h6>{{form.discount}}</li>
             </ul>
         </div>
     </div>
