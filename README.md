@@ -1,3 +1,5 @@
+# ТЕСТОВОЕ ЗАДАНИЕ №1 
+
 ### Средства реализации приложения
 - Djnago 3.2.11
 - PostgreSQL
@@ -59,10 +61,6 @@ python manage.py runserver
 ![image](https://github.com/Artem-bobunov/test_TMK_PP/assets/38436717/e442358d-6039-401a-a16b-422d8abcb128)
 
 
-
-
-
-# ТЕСТОВОЕ ЗАДАНИЕ №1 
 ## Создание базы данных и приложения
 
 ### Создание базы данных
