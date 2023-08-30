@@ -3,6 +3,7 @@
 - PostgreSQL
 - Библиотека для работы с постгри psycopg2
 - IDE: PyCharm
+
 Для запуска проекта можно его склонировать и установить следующие зависимости
 ```
 pip install -r requirements.txt
@@ -11,7 +12,7 @@ pip install -r requirements.txt
 ```
 python manage.py makemigrations
 ```
-Далее необходимо выполнить миграции в базу данных. Эта команда применит все изменения которые были сохранены  миграциях
+Далее необходимо выполнить миграции в базу данных. Эта команда применит все изменения которые были сохранены в миграциях
 ```
 python manage.py migrate
 ```
@@ -43,12 +44,12 @@ admin.site.register(document_header,DocumentHeader)
 admin.site.register(document_specification,DocumentSpecification)
 admin.site.register(product_stock,ProductStock)
 ```
-Выполнить команду созднаия пользователя
+Выполнить команду создания пользователя
 ```
 python manage.py createsuperuser
 ```
 
-Если все прошло успешно для щапуска проекта необходимо выполнить следующую команду:
+Если все прошло успешно для запуска проекта необходимо выполнить следующую команду:
 ```
 python manage.py runserver
 ```
