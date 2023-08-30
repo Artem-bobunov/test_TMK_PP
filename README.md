@@ -54,6 +54,13 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
+Если зайти по адресу localhost:8000/admin/ ввести логин и пароль то перенаправит на страницу админки
+
+![image](https://github.com/Artem-bobunov/test_TMK_PP/assets/38436717/e442358d-6039-401a-a16b-422d8abcb128)
+
+
+
+
 
 # ТЕСТОВОЕ ЗАДАНИЕ №1 
 ## Создание базы данных и приложения
