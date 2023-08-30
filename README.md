@@ -1,7 +1,11 @@
+### Средства реализации приложения
+- Djnago 3.2.11
+- PostgreSQL
+- Библиотека для работы с постгри psycopg2
+- IDE: PyCharm
 Для запуска проекта можно его склонировать и установить следующие зависимости
 ```
-pip install Djnago==3.2.11
-pip install psycopg2
+pip install -r requirements.txt
 ```
 Затем зайти в первую папку test_set и выполнить следующую команду, которая сохрнаит все изменнения в отдельной папке migrations
 ```
@@ -11,6 +15,39 @@ python manage.py makemigrations
 ```
 python manage.py migrate
 ```
+
+Чтобы можно было использовать стандартную админку Django нужно в файле admin.py зарегистрировать модели как показано ниже:
+```python
+from django.contrib import admin
+from .models import *
+
+class DirectoryProduct(admin.ModelAdmin):
+    list_display = ['name_product','price']
+
+class DirectoryCounterparties(admin.ModelAdmin):
+    list_display = ['contract']
+
+class DocumentHeader(admin.ModelAdmin):
+    list_display = ['number_document','date','summ_document','state_document','type_document']
+
+class DocumentSpecification(admin.ModelAdmin):
+    list_display = ['counts','counts_reserv','prices','discount']
+
+class ProductStock(admin.ModelAdmin):
+    list_display = ['count_fact','count_reserv']
+
+# Register your models here.
+admin.site.register(directory_product,DirectoryProduct)
+admin.site.register(directory_counterparties,DirectoryCounterparties)
+admin.site.register(document_header,DocumentHeader)
+admin.site.register(document_specification,DocumentSpecification)
+admin.site.register(product_stock,ProductStock)
+```
+Выполнить команду созднаия пользователя
+```
+python manage.py createsuperuser
+```
+
 Если все прошло успешно для щапуска проекта необходимо выполнить следующую команду:
 ```
 python manage.py runserver
